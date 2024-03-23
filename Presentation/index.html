@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+<h1 class="h1 p-3">Products</h1>
+<button type="button" class="btn float-end btn-primary m-4" onclick="openModal('POST')">Create</button>
+<table class="table" id="product_table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Prezzo</th>
+        <th scope="col">Azioni</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalTitle"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form_product">
+                    <div class="mb-3">
+                        <label for="id" class="form-label">ID</label>
+                        <input type="number" class="form-control" id="id" name="id" required readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="marca" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marca" name="marca" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prezzo" class="form-label">Prezzo</label>
+                        <input type="number" min="0" step="1" class="form-control" id="prezzo" name="prezzo" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" id="button_submit"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
